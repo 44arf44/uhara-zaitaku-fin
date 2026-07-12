@@ -1,0 +1,913 @@
+
+:root {
+  --green:#5f812b;
+  --green-dark:#375518;
+  --soft-green:#7f9b45;
+  --mint:#f1f5e8;
+  --cream:#f4f2e8;
+  --warm:#f8f7f2;
+  --peach:#eef3f4;
+  --yellow:#f4f1d9;
+  --ink:#263638;
+  --muted:#687777;
+  --line:rgba(95,129,43,.18);
+  --white:#fff;
+  --shadow:0 22px 60px rgba(75,101,74,.12);
+  --radius:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%, rgba(255,232,200,.45), transparent 28%),
+    radial-gradient(circle at 90% 15%, rgba(218,238,221,.55), transparent 28%),
+    linear-gradient(180deg,#fffaf2 0%,#fcf8f1 40%,#f8f0e3 100%);
+  line-height:1.9;
+  letter-spacing:.04em;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.serif{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;font-weight:500;letter-spacing:.075em}
+.container{width:min(1480px,calc(100% - 96px));margin:0 auto}
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(251,251,248,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{height:92px;padding:0 44px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo img{width:120px;height:auto}
+.nav{display:flex;gap:20px;font-size:13px;font-weight:800;color:#2b3b35;white-space:nowrap}
+.header-tel{font-weight:900;color:var(--green);font-size:18px;white-space:nowrap}
+.btn{min-height:58px;padding:0 32px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-weight:900;border:1px solid transparent;transition:.25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,#5f812b,#4e7279);color:white;box-shadow:0 14px 36px rgba(47,96,72,.22)}
+.btn-light{background:rgba(255,255,255,.88);color:var(--green);border-color:rgba(47,96,72,.25)}
+.btn-outline{border-color:var(--green);color:var(--green);background:white}
+.full{width:100%}
+.hero{
+  min-height:760px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(255,250,242,.96),rgba(255,250,242,.82) 42%,rgba(255,250,242,.28)),
+    url("https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=2400&q=90") center/cover no-repeat;
+}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--warm))}
+.hero-inner{min-height:760px;display:flex;align-items:center;position:relative;z-index:2}
+.hero-copy{max-width:860px}
+.eyebrow,.label{color:var(--soft-green);font-size:13px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(42px,4.2vw,76px);line-height:1.42;color:#12241c;margin-bottom:28px}
+.hero-lead{font-size:20px;color:#374940;max-width:780px;margin-bottom:38px}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap}
+.home-features{position:relative;z-index:3;margin-top:-82px}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.feature-grid article{min-height:136px;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.8);box-shadow:var(--shadow);border-radius:24px;padding:28px;display:flex;align-items:center;gap:18px}
+.feature-grid span,.round-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--mint);color:var(--green);font-weight:900}
+.feature-grid h3{font-size:18px;line-height:1.5}
+.section{padding:116px 0}
+.section-soft{background:rgba(248,240,227,.82)}
+.section-head{max-width:960px;margin-bottom:56px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.section-head h2,.two-col h2,.doctor-text h2,.panel h2,.contact-panel h2,.split-doctor h2{font-size:clamp(34px,3.2vw,54px);line-height:1.55;margin-bottom:20px}
+.section-head p,.two-col p,.doctor-text p,.panel p,.contact-panel p,.split-doctor p,.narrow p{color:var(--muted);font-size:16px}
+.two-col{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:start}
+.card-grid{display:grid;gap:28px}
+.three{grid-template-columns:repeat(3,1fr)}
+.card,.panel,.contact-panel{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 18px 50px rgba(48,78,62,.08);padding:40px}
+.card.warm{background:linear-gradient(180deg,#fff,#f5f7e9)}
+.card.mint{background:linear-gradient(180deg,#fff,#edf4f5)}
+.card.peach{background:linear-gradient(180deg,#fff,#f4f3e8)}
+.card h3,.panel h3{color:var(--green);font-size:22px;margin-bottom:12px}
+.card p{color:var(--muted)}
+.text-link{display:inline-block;margin-top:20px;color:var(--green);font-weight:900}
+.split-doctor{display:grid;grid-template-columns:1fr 480px;gap:72px;align-items:center}
+.doctor-mini{overflow:hidden;background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.doctor-mini img{width:100%;height:520px;object-fit:cover;object-position:center top}
+.doctor-mini div{padding:28px}
+.doctor-mini strong{display:block;color:var(--green-dark);font-size:26px}
+.doctor-mini span{color:var(--muted)}
+.page-hero{padding:82px 0 66px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(255,250,242,.98),rgba(255,250,242,.86)),url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat}
+.page-hero h1{font-size:56px}
+.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:16px}
+.narrow{max-width:1080px}
+.lead-text{font-size:22px!important;color:var(--ink)!important;line-height:1.9;margin-bottom:26px}
+.doctor-layout{display:grid;grid-template-columns:500px 1fr;gap:78px;align-items:start}
+.doctor-photo{position:sticky;top:120px}
+.doctor-photo img{width:100%;height:660px;object-fit:cover;object-position:center top;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);background:white}
+.doctor-title{color:var(--green)!important;font-weight:900;font-size:19px!important;margin-bottom:28px}
+.doctor-text h3{font-size:24px;color:var(--green);margin:34px 0 12px}
+.profile-grid,.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.def-list{display:grid;gap:12px}
+.def-list dt{font-weight:900;color:var(--green);margin-top:14px}
+.def-list dd{color:var(--muted)}
+.check-list{list-style:none;display:grid;gap:12px}
+.check-list li{position:relative;padding-left:26px;color:#3c4b45}
+.check-list li:before{content:"";position:absolute;left:0;top:.75em;width:9px;height:9px;border-radius:50%;background:var(--green)}
+.large li{font-size:17px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.panel .sub{color:var(--soft-green);font-weight:900;margin-bottom:18px}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.service-grid article{border:1px solid var(--line);border-radius:22px;padding:30px;min-height:198px;box-shadow:0 12px 34px rgba(48,78,62,.06)}
+.service-grid.colored article:nth-child(3n+1){background:#f6f7ea}
+.service-grid.colored article:nth-child(3n+2){background:#edf4f5}
+.service-grid.colored article:nth-child(3n){background:#f5f3e9}
+.service-grid span{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:white;color:var(--green);font-weight:900;margin-bottom:18px;border:1px solid var(--line)}
+.service-grid h3{font-size:19px;color:var(--green);margin-bottom:8px}
+.service-grid p{font-size:14px;color:var(--muted)}
+.emphasis{margin-top:22px;padding:18px 22px;border-radius:18px;background:#f6f7ea;color:#4b3a2c!important;font-weight:700}
+.warm-message{margin-top:42px;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.flow-grid article{background:white;border:1px solid var(--line);border-radius:var(--radius);text-align:center;padding:36px;box-shadow:0 14px 38px rgba(48,78,62,.06)}
+.flow-grid span{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#5f812b,#4e7279);color:white;display:grid;place-items:center;margin:0 auto 18px;font-weight:900}
+.flow-grid h3{color:var(--green);font-size:21px;margin-bottom:8px}
+.flow-grid p{color:var(--muted)}
+.note{font-size:13px!important;color:var(--muted)!important}
+.area-grid,.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:54px;align-items:start}
+.map-card{position:relative;min-height:430px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:white}
+.map-card iframe{width:100%;height:430px;border:0;display:block;filter:saturate(.85)}
+.map-card.large iframe{height:520px}
+.radius-badge{position:absolute;right:24px;top:24px;width:112px;height:112px;border-radius:50%;background:rgba(78,114,121,.88);color:white;display:grid;place-items:center;font-weight:900}
+.standards-wrap{display:grid;gap:28px}
+.dx-box{background:#f6f7ea}
+.tag-list{display:flex;flex-wrap:wrap;gap:12px}
+.contact-grid{grid-template-columns:1fr 480px}
+.contact-panel{position:sticky;top:120px}
+.contact-panel dd{font-size:20px;font-weight:900;color:var(--green-dark);word-break:break-all}
+.site-footer{background:linear-gradient(135deg,#385b61,#314f2f);color:white;padding:54px 0 24px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.footer-logo{width:240px;background:white;border-radius:18px;padding:10px;margin-bottom:18px}
+.footer-grid p{color:rgba(255,255,255,.78)}
+.footer-contact p{margin-bottom:8px}
+.copyright{text-align:center;color:rgba(255,255,255,.55);font-size:12px;margin-top:34px}
+@media(max-width:1200px){.nav{display:none}.container{width:min(100% - 40px,1480px)}.two-col,.split-doctor,.doctor-layout,.profile-grid,.info-grid,.area-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}.three,.compare-grid,.flow-grid,.service-grid,.feature-grid{grid-template-columns:1fr 1fr}.doctor-photo,.contact-panel{position:static}}
+@media(max-width:720px){.header-inner{height:74px;padding:0 18px}.logo img{width:180px}.header-tel{display:none}.hero,.hero-inner{min-height:auto}.hero-inner{padding:92px 0 120px}.hero h1{font-size:37px}.hero-lead{font-size:16px}.section{padding:78px 0}.feature-grid,.three,.compare-grid,.flow-grid,.service-grid{grid-template-columns:1fr}.doctor-photo img,.doctor-mini img{height:auto}.page-hero h1{font-size:38px}}
+
+
+/* Additional refinements: illustration-only logo, smaller footer logo, 16km map, scrub portrait */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-width:270px;
+}
+.logo{
+  min-width:0;
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+}
+.logo-symbol{
+  width:68px;
+  height:68px;
+  object-fit:contain;
+}
+.clinic-name{
+  display:flex;
+  flex-direction:column;
+  color:var(--green-dark);
+  line-height:1.2;
+  white-space:nowrap;
+}
+.clinic-name strong{
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+  font-size:20px;
+  letter-spacing:.08em;
+  font-weight:600;
+}
+.clinic-name small{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:.18em;
+}
+.footer-logo-lockup{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  margin-bottom:16px;
+}
+.footer-logo-lockup img{
+  width:46px;
+  height:46px;
+  object-fit:contain;
+}
+.footer-logo-lockup span{
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+.footer-logo-lockup strong{
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+  font-size:15px;
+  letter-spacing:.07em;
+}
+.footer-logo-lockup small{
+  margin-top:4px;
+  color:rgba(255,255,255,.66);
+  font-size:8px;
+  letter-spacing:.15em;
+}
+.clinic-map{
+  width:100%;
+  height:430px;
+  z-index:1;
+  background:#edf4ef;
+}
+.map-card.large .clinic-map{height:520px}
+.map-card .leaflet-container{
+  font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,sans-serif;
+}
+.radius-badge{
+  z-index:500;
+  width:104px;
+  height:104px;
+  background:rgba(82,122,52,.88);
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 10px 30px rgba(33,65,48,.18);
+  pointer-events:none;
+}
+@media(max-width:1200px){
+  .brand{min-width:auto}
+}
+@media(max-width:720px){
+  .logo-symbol{width:54px;height:54px}
+  .clinic-name strong{font-size:15px}
+  .clinic-name small{display:none}
+  .footer-logo-lockup img{width:40px;height:40px}
+  .clinic-map,.map-card.large .clinic-map{height:360px}
+  .radius-badge{width:86px;height:86px;right:14px;top:14px;font-size:13px}
+}
+
+.section-river-photo{padding-top:24px}
+.river-photo-card{overflow:hidden;border-radius:32px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.river-photo-card img{width:100%;max-height:680px;object-fit:cover}
+.river-photo-card figcaption{padding:18px 24px;text-align:center;color:var(--muted);font-size:14px}
+.google-map-link{display:inline-flex;margin-top:16px;padding:11px 20px;border-radius:999px;border:1px solid var(--green);color:var(--green);background:rgba(255,255,255,.9);font-weight:900}
+.fee-formula{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
+.fee-formula span{padding:14px 18px;border-radius:14px;background:#eef5e8;border:1px solid #d9e4ce;color:#46653f;font-weight:900}
+.fee-table-wrap{overflow-x:auto}.fee-table{width:100%;border-collapse:separate;border-spacing:0;min-width:700px;border-radius:18px;overflow:hidden;border:1px solid #ded8c9}
+.fee-table th,.fee-table td{padding:14px 12px;text-align:center;border-right:1px solid #e3ddcf;border-bottom:1px solid #e3ddcf}
+.fee-table thead th{background:#f3ead7;color:#5b513f}.fee-table tbody th{background:#eef5e8;color:#46653f}.fee-table tbody td{background:#fffdf8}
+.fee-total th,.fee-total td{background:#f8efe3!important;font-weight:900}
+.high-cost-note{margin-top:20px;padding:20px;border-radius:16px;background:#fff1e8;border:1px solid #efd8ca}.high-cost-note strong{display:block;color:#885c43;margin-bottom:6px}
+.standards-simple{display:grid;gap:28px}.partner-columns{display:grid;grid-template-columns:1fr 1fr;gap:28px}.dx-statement{background:linear-gradient(180deg,#fff,#f8fbf7)}
+.emphasis-large{font-size:clamp(28px,3vw,46px)!important;line-height:1.55!important;padding:32px 36px!important;text-align:center}
+.service-categories{display:grid;gap:34px}.service-category{border-radius:28px;padding:30px;border:1px solid var(--line)}.service-category h3{text-align:center;margin-bottom:22px;font-size:24px}
+.service-category.care{background:#fff0f3}.service-category.care h3{color:#a9576a}
+.service-category.chronic{background:#eef7ed}.service-category.chronic h3{color:#4f744e}
+.service-category.treatment{background:#eef5fb}.service-category.treatment h3{color:#4e7397}
+.service-category .service-grid{display:grid;gap:18px}.service-grid-3{grid-template-columns:repeat(3,1fr)}.service-grid-4{grid-template-columns:repeat(4,1fr)}.service-grid-5{grid-template-columns:repeat(5,1fr)}
+.service-category article{background:rgba(255,255,255,.82);border:1px solid rgba(70,90,80,.12);border-radius:18px;padding:24px;min-height:180px}
+.service-category h4{color:var(--green-dark);font-size:18px;margin-bottom:8px}.service-category p{color:var(--muted);font-size:14px}
+@media(max-width:1100px){.partner-columns{grid-template-columns:1fr}.service-grid-4,.service-grid-5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.service-grid-3,.service-grid-4,.service-grid-5{grid-template-columns:1fr}.emphasis-large{font-size:28px!important;padding:24px!important}}
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* フィルターの作成 */
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); /
+}
+
+/* 画像が崩れないための設定 */
+.image-wrapper img {
+  display: block;
+  width: 200%;
+}
+
+/* ========================================
+   スマートフォン表示
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+
+  /* ページ全体 */
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* ヘッダー */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    min-height: 72px;
+    height: auto;
+    padding: 8px 16px;
+    gap: 10px;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .logo-symbol {
+    width: 50px;
+    height: 50px;
+  }
+
+  .clinic-name strong {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .clinic-name small {
+    display: none;
+  }
+
+  .header-tel {
+    display: none;
+  }
+
+  /*
+   現在のHTMLを変更しない最小構成では、
+   スマートフォン時にメニューを横スクロール表示
+  */
+  .nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    padding: 10px 16px;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: rgba(255, 250, 242, 0.98);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+    font-size: 13px;
+  }
+
+  /* ナビゲーション分の余白 */
+  main {
+    padding-top: 48px;
+  }
+
+  /* TOPページ */
+  .hero {
+    min-height: auto;
+    background-position: 58% center;
+  }
+
+  .hero-inner {
+    min-height: 620px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    align-items: flex-start;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.5;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 52px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  /* 各セクション */
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .page-hero {
+    padding-top: 52px;
+    padding-bottom: 42px;
+  }
+
+  .page-hero h1 {
+    font-size: 34px;
+  }
+
+  .section-head h2,
+  .two-col h2,
+  .doctor-text h2,
+  .panel h2,
+  .contact-panel h2,
+  .split-doctor h2 {
+    font-size: 29px;
+    line-height: 1.55;
+  }
+
+  /* 複数列を1列へ */
+  .feature-grid,
+  .card-grid,
+  .three,
+  .two-col,
+  .split-doctor,
+  .doctor-layout,
+  .profile-grid,
+  .info-grid,
+  .area-grid,
+  .contact-grid,
+  .compare-grid,
+  .flow-grid,
+  .partner-columns,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    gap: 14px;
+  }
+
+  .feature-grid article {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .card,
+  .panel,
+  .contact-panel {
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+
+  /* 医師写真 */
+  .doctor-photo,
+  .contact-panel {
+    position: static;
+  }
+
+  .doctor-photo img,
+  .doctor-mini img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  /* 診療内容 */
+  .service-grid,
+  .service-grid-3,
+  .service-grid-4,
+  .service-grid-5 {
+    grid-template-columns: 1fr;
+  }
+
+  .service-category {
+    padding: 20px 14px;
+  }
+
+  .service-category article {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .emphasis-large {
+    padding: 24px 18px !important;
+    font-size: 25px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* 診療開始までの流れ */
+  .flow-grid {
+    gap: 16px;
+  }
+
+  .flow-grid article {
+    padding: 26px 18px;
+  }
+
+  /* 料金表は横スクロール */
+  .fee-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fee-table {
+    min-width: 680px;
+    font-size: 13px;
+  }
+
+  .fee-formula {
+    justify-content: flex-start;
+  }
+
+  .fee-formula span {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  /* 地図 */
+  .map-card,
+  .map-card.large {
+    min-height: 360px;
+  }
+
+  .clinic-map,
+  .map-card.large .clinic-map {
+    height: 360px;
+  }
+
+  .radius-badge {
+    top: 14px;
+    right: 14px;
+    width: 84px;
+    height: 84px;
+    font-size: 12px;
+  }
+
+  .google-map-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 長いメールアドレス対策 */
+  .contact-panel dd,
+  .footer-contact a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* 河川写真 */
+  .river-photo-card img {
+    height: auto;
+    max-height: none;
+  }
+
+  /* フッター */
+  .site-footer {
+    padding-top: 42px;
+  }
+
+  .footer-logo-lockup img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer-logo-lockup strong {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   当院についてページ：背景画像付きヒーロー
+   使用画像：assets/about-bg.jpg
+   ========================================================= */
+
+.page-hero.warm {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+
+  background: transparent;
+}
+
+/* 背景画像 */
+.page-hero.warm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("./assets/about-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+
+  /* 画像を少し柔らかく見せる */
+  filter: saturate(0.9) brightness(1.03);
+  transform: scale(1.015);
+}
+
+/* 左側の文字を読みやすくする白いグラデーション */
+.page-hero.warm::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(250, 248, 243, 0.98) 0%,
+      rgba(250, 248, 243, 0.94) 28%,
+      rgba(250, 248, 243, 0.78) 46%,
+      rgba(250, 248, 243, 0.36) 67%,
+      rgba(250, 248, 243, 0.08) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0) 55%,
+      rgba(248, 244, 236, 0.16) 100%
+    );
+}
+
+/* 文字を背景より前面へ */
+.page-hero.warm .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* パンくず */
+.page-hero.warm .breadcrumb {
+  margin-bottom: 20px;
+  color: #5f695f;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ページタイトル */
+.page-hero.warm h1 {
+  margin: 0;
+  color: #2f6442;
+  font-size: clamp(38px, 4.2vw, 68px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.45);
+}
+
+/* =========================================================
+   スマートフォン・タブレット対応
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .page-hero.warm {
+    min-height: 430px;
+  }
+
+  .page-hero.warm::before {
+    background-position: 60% center;
+  }
+
+  .page-hero.warm::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(250, 248, 243, 0.98) 0%,
+        rgba(250, 248, 243, 0.90) 55%,
+        rgba(250, 248, 243, 0.38) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(248, 244, 236, 0.20)
+      );
+  }
+}
+
+@media (max-width: 600px) {
+  .page-hero.warm {
+    min-height: 330px;
+    align-items: flex-end;
+    padding-top: 90px;
+    padding-bottom: 42px;
+  }
+
+  .page-hero.warm::before {
+    background-position: 66% center;
+    filter: saturate(0.85) brightness(1.02);
+  }
+
+  .page-hero.warm::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(250, 248, 243, 0.18) 0%,
+        rgba(250, 248, 243, 0.64) 48%,
+        rgba(250, 248, 243, 0.98) 100%
+      );
+  }
+
+  .page-hero.warm .breadcrumb {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .page-hero.warm h1 {
+    font-size: clamp(30px, 9vw, 42px);
+    letter-spacing: 0.05em;
+  }
+}
+
+/* =========================================================
+   homecare.html専用：在宅医療ページの背景画像
+   使用画像：assets/homecare-bg.jpg
+
+   重要：
+   about.htmlでも .page-hero.warm を使用しているため、
+   homecare.htmlの<body>に class="homecare-page" を追加してください。
+
+   変更前：
+   <body class="">
+
+   変更後：
+   <body class="homecare-page">
+   ========================================================= */
+
+
+/* 在宅医療ページのヒーロー領域 */
+.homecare-page .page-hero.warm {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+
+  background: transparent;
+}
+
+
+/* 背景画像 */
+.homecare-page .page-hero.warm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("./assets/homecare-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+
+  filter: saturate(0.88) brightness(1.04);
+  transform: scale(1.015);
+}
+
+
+/* 左側の文字を読みやすくする白～暖色のグラデーション */
+.homecare-page .page-hero.warm::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(250, 248, 243, 0.99) 0%,
+      rgba(250, 248, 243, 0.96) 30%,
+      rgba(250, 248, 243, 0.82) 47%,
+      rgba(250, 248, 243, 0.43) 66%,
+      rgba(250, 248, 243, 0.08) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0) 56%,
+      rgba(247, 241, 232, 0.18) 100%
+    );
+}
+
+
+/* ヒーロー内の文字を背景より前に出す */
+.homecare-page .page-hero.warm .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+
+/* パンくずリスト */
+.homecare-page .page-hero.warm .breadcrumb {
+  margin-bottom: 20px;
+  color: #5f695f;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+
+/* ページタイトル */
+.homecare-page .page-hero.warm h1 {
+  margin: 0;
+  max-width: 620px;
+
+  color: #2f6442;
+  font-size: clamp(38px, 4.2vw, 68px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================================
+   タブレット
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .homecare-page .page-hero.warm {
+    min-height: 430px;
+  }
+
+  .homecare-page .page-hero.warm::before {
+    background-position: 61% center;
+  }
+
+  .homecare-page .page-hero.warm::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(250, 248, 243, 0.99) 0%,
+        rgba(250, 248, 243, 0.93) 53%,
+        rgba(250, 248, 243, 0.43) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(247, 241, 232, 0.2)
+      );
+  }
+}
+
+
+/* =========================================================
+   スマートフォン
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .homecare-page .page-hero.warm {
+    min-height: 340px;
+    align-items: flex-end;
+
+    padding-top: 90px;
+    padding-bottom: 42px;
+  }
+
+  .homecare-page .page-hero.warm::before {
+    background-position: 68% center;
+    filter: saturate(0.82) brightness(1.03);
+  }
+
+  .homecare-page .page-hero.warm::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(250, 248, 243, 0.14) 0%,
+        rgba(250, 248, 243, 0.66) 48%,
+        rgba(250, 248, 243, 0.99) 100%
+      );
+  }
+
+  .homecare-page .page-hero.warm .breadcrumb {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .homecare-page .page-hero.warm h1 {
+    font-size: clamp(30px, 9vw, 42px);
+    letter-spacing: 0.05em;
+  }
+}
