@@ -990,3 +990,11 @@ img{display:block;max-width:100%}
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
+.homecare-page .page-hero h1{
+    margin-left:120px;
+}
+
+.homecare-page .page-hero .lead-text{
+    margin-left:120px;
+}
