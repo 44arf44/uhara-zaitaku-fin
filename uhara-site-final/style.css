@@ -991,10 +991,8 @@ img{display:block;max-width:100%}
   }
 }
 
-.homecare-page .page-hero h1{
-    margin-left:120px;
-}
-
-.homecare-page .page-hero .lead-text{
-    margin-left:120px;
+.page-hero .container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 40px 0 72px;
 }
